@@ -12,11 +12,17 @@
 </head>
 <body>
     <header>
-        <div>Manga Library</div>
+        <div class="title">Manga Library</div>
+        <div class="summary"><u>Summary</u>
+            <label for="mangaowned">Manga owned</label>
+            <div class="mangaowned">0</div>
+            <label for="mangaread">Manga read</label>
+            <div class="mangaread">0</div>
+        </div>
     </header>
     <div class="top">
         <button class="addbtn"><strong> + Add Manga</strong></button>
-        <div class="inputcard" style="display:none">
+        <div class="addingcard" style="">
             <form action="get">
                 <label for="seriesname">name</label>
                 <input type="text">
@@ -28,10 +34,7 @@
                 <input type="checkbox" name="readstatus" id="readstatus">
             </form>
         </div>
-        <div class="summary">Summary
-            <div class="mangaowned"></div>
-            <div class="mangaread"></div>
-        </div>
+        
     </div>
     <div class="card" style="display:none">
         <div class="seriesname"></div>
