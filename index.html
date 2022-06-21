@@ -4,15 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library Tracker</title>
+    <title>Manga Tracker</title>
+    <link rel="reset" href="./reset.css">
     <link rel="stylesheet" href="./style.css">
     <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
     <script defer src="./app.js"></script>
 </head>
 <body>
     <header>
-        <div>Library</div>
+        <div>Manga Library</div>
     </header>
+    <div class="top">
+        <button class="addbtn"><strong> + Add Manga</strong></button>
+        <div class="inputcard" style="display:none">
+            <form action="get">
+                <label for="seriesname">name</label>
+                <input type="text">
+                <label for="author">author</label>
+                <input type="text">
+                <label for="volume">volume</label>
+                <input type="number" name="number" id="volume">
+                <label for="readstatus">readstatus</label>
+                <input type="checkbox" name="readstatus" id="readstatus">
+            </form>
+        </div>
+        <div class="summary">Summary
+            <div class="mangaowned"></div>
+            <div class="mangaread"></div>
+        </div>
+    </div>
+    <div class="card" style="display:none">
+        <div class="seriesname"></div>
+        <div class="author"></div>
+        <div class="volume"></div>
+        <div class="readstatus"></div>
+    </div>
     <footer>
         <div>Made by <a href="https://github.com/FaiyaazHawk">Faiyaaz Haque</a> for the <a href="https://www.theodinproject.com/">The Odin Project</a></div>
     </footer>
