@@ -21,17 +21,18 @@
         </div>
     </header>
     <div class="top">
-        <button class="addbtn"><strong> + Add Manga</strong></button>
-        <div class="addingcard" style="">
-            <form action="get">
+        <button class="addbtn" onclick="showCard()"><strong> + Add Manga</strong></button>
+        <div class="addingcard" style="display: none">
+            <form>
                 <label for="seriesname">name</label>
-                <input type="text">
+                <input type="text" placeholder="name" id="seriesname">
                 <label for="author">author</label>
-                <input type="text">
+                <input type="text" placeholder="author" id="author">
                 <label for="volume">volume</label>
                 <input type="number" name="number" id="volume">
                 <label for="readstatus">readstatus</label>
                 <input type="checkbox" name="readstatus" id="readstatus">
+                <input type="button" value="submit" onclick="addBookToLibrary()" id="submit">
             </form>
         </div>
         
