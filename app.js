@@ -11,7 +11,7 @@ class Book {
 }
 
 function addBookToLibrary() {
-    const name = document.getElementById('seriesname').value;
+    const name = document.getElementById('name').value;
     const author = document.getElementById('author').value;
     const volume = document.getElementById('volume').value;
     const readstatus = document.getElementById('readstatus').checked;
@@ -34,11 +34,40 @@ function displayFromLibrary() {
         return null
     }else {
         library.forEach(book => {
-            console.log(book.author + 'hello there')
-
+            createBook(book)
         });
     }
 
+}
+
+function createBook(book) {
+    const body = document.getElementsByClassName('container')[0]
+    const card = document.createElement('div')
+    const name = document.createElement('div')
+    const author = document.createElement('div')
+    const volume = document.createElement('div')
+    const readstatus = document.createElement('button')
+
+    card.classList.add('card')
+
+    name.textContent = `Title: ${book.name}`;
+    card.appendChild(name);
+
+    author.textContent = `Author: ${book.author}`;
+    card.appendChild(author);
+
+    volume.textContent = `Volume: ${book.volume}`;
+    card.appendChild(volume);
+
+    
+    if(book.status === false) {
+        readstatus.style.backgroundColor = 'red'
+    } else {
+        readstatus.style.backgroundColor = 'green'
+    }
+    card.appendChild(readstatus);
+
+    body.appendChild(card)
 }
 
 

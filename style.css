@@ -56,10 +56,22 @@ body {
     justify-content: space-between;
 }
 
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+
 .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 200px;
     width: 200px;
     background-color: antiquewhite;
+    border-radius: 30px;
+    
 }
 
 footer {

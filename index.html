@@ -13,19 +13,15 @@
 <body>
     <header>
         <div class="title">Manga Library</div>
-        <div class="summary"><u>Summary</u>
-            <label for="mangaowned">Manga owned</label>
-            <div class="mangaowned">0</div>
-            <label for="mangaread">Manga read</label>
-            <div class="mangaread">0</div>
-        </div>
+        
+        
     </header>
     <div class="top">
         <button class="addbtn" onclick="showCard()"><strong> + Add Manga</strong></button>
         <div class="addingcard" style="display: none">
             <form>
-                <label for="seriesname">name</label>
-                <input type="text" placeholder="name" id="seriesname">
+                <label for="name">name</label>
+                <input type="text" placeholder="name" id="name">
                 <label for="author">author</label>
                 <input type="text" placeholder="author" id="author">
                 <label for="volume">volume</label>
@@ -37,12 +33,11 @@
         </div>
         
     </div>
-    <div class="card" style="display:none">
-        <div class="seriesname"></div>
-        <div class="author"></div>
-        <div class="volume"></div>
-        <div class="readstatus"></div>
+    <div class="container">
+
     </div>
+    
+    
     <footer>
         <div>Made by <a href="https://github.com/FaiyaazHawk">Faiyaaz Haque</a> for the <a href="https://www.theodinproject.com/">The Odin Project</a></div>
     </footer>
