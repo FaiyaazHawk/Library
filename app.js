@@ -17,6 +17,7 @@ function addBookToLibrary() {
     const readstatus = document.getElementById('readstatus').checked;
     let book =  new Book(name,author,volume,readstatus)
     library.push(book)
+    clearPage()
     displayFromLibrary()
     
 }
@@ -27,6 +28,11 @@ function showCard() {
     } else {
         addingcard.style.display = ""
     }
+}
+//hacky way to remove duplicates from showing on page
+function clearPage() {
+    const body = document.getElementsByClassName('container')[0]
+    body.innerHTML = ''
 }
 
 function displayFromLibrary() {
@@ -47,6 +53,7 @@ function createBook(book) {
     const author = document.createElement('div')
     const volume = document.createElement('div')
     const readstatus = document.createElement('button')
+    const removeBtn = document.createElement('button');
 
     card.classList.add('card')
 
@@ -62,22 +69,37 @@ function createBook(book) {
     
     if(book.status === false) {
         readstatus.style.backgroundColor = 'red'
+        readstatus.textContent = "Not yet read"
     } else {
-        readstatus.style.backgroundColor = 'green'
+        readstatus.style.backgroundColor = 'lightgreen'
+        readstatus.textContent = "Read"
     }
     card.appendChild(readstatus);
 
+    removeBtn.textContent = 'Remove'; 
+    removeBtn.setAttribute('class', 'removeBtn');
+    
+    card.appendChild(removeBtn);
+
     body.appendChild(card)
 }
+
+function removeCard() {
+    console.log('hello')
+}
+
+
 
 
 //DOM selections
 
 const addingcard = document.getElementsByClassName("addingcard")[0]
 const submitbtn = document.getElementById('submit')
+const removeBtns = document.querySelectorAll("removeBtn")
 
 // event listeners
-
-
+removeBtns.forEach(function (btn) {
+    btn.addEventListener("click", removeCard())    
+})
 
 
