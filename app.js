@@ -117,10 +117,10 @@ function toggleReadStatus(btn) {
 //DOM selections
 
 const addingcard = document.getElementsByClassName("addingcard")[0]
-const submitbtn = document.getElementById('submit')
-const removeBtns = document.getElementsByClassName("removeBtn")
 
-// event listeners
+
+
+
 
     
     
