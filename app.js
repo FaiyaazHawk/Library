@@ -75,6 +75,9 @@ function createBook(book, index) {
         readstatus.style.backgroundColor = 'lightgreen'
         readstatus.textContent = "Read"
     }
+    readstatus.dataset.status = book.status
+    readstatus.dataset.index = index;
+    readstatus.addEventListener('click', function() {toggleReadStatus(this)})
     card.appendChild(readstatus);
 
     removeBtn.textContent = 'Remove'; 
@@ -95,6 +98,19 @@ function removeCard(btn) {
     displayFromLibrary()
 }
 
+function toggleReadStatus(btn) {
+    const index = btn.dataset.index
+    const status = btn.dataset.status
+
+    if (status == "true") {
+        library[index].status = false;
+    } else if (status == "false") {
+        library[index].status = true;
+    }
+    clearPage()
+    displayFromLibrary()
+
+}
 
 
 
