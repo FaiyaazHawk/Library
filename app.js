@@ -1,6 +1,7 @@
 //Data structure and functions
 let library = []
 
+
 class Book {
     constructor (name, author, volume, status) {
         this.name = name;
