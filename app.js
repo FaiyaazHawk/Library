@@ -39,14 +39,14 @@ function displayFromLibrary() {
     if (!library) {
         return null
     }else {
-        library.forEach(book => {
-            createBook(book)
+        library.forEach((book, index) => {
+            createBook(book, index)
         });
     }
 
 }
 
-function createBook(book) {
+function createBook(book, index) {
     const body = document.getElementsByClassName('container')[0]
     const card = document.createElement('div')
     const name = document.createElement('div')
@@ -56,6 +56,7 @@ function createBook(book) {
     const removeBtn = document.createElement('button');
 
     card.classList.add('card')
+    card.dataset.index = index
 
     name.textContent = `Title: ${book.name}`;
     card.appendChild(name);
