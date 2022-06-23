@@ -56,7 +56,7 @@ function createBook(book, index) {
     const removeBtn = document.createElement('button');
 
     card.classList.add('card')
-    card.dataset.index = index
+    
 
     name.textContent = `Title: ${book.name}`;
     card.appendChild(name);
@@ -79,14 +79,17 @@ function createBook(book, index) {
 
     removeBtn.textContent = 'Remove'; 
     removeBtn.setAttribute('class', 'removeBtn');
+    removeBtn.dataset.index = index;
+    removeBtn.addEventListener('click', function() {removeCard()})
     
     card.appendChild(removeBtn);
 
     body.appendChild(card)
+    
 }
 
 function removeCard() {
-    console.log('hello')
+    console.log('will remove card')
 }
 
 
@@ -96,11 +99,9 @@ function removeCard() {
 
 const addingcard = document.getElementsByClassName("addingcard")[0]
 const submitbtn = document.getElementById('submit')
-const removeBtns = document.querySelectorAll("removeBtn")
+const removeBtns = document.getElementsByClassName("removeBtn")
 
 // event listeners
-removeBtns.forEach(function (btn) {
-    btn.addEventListener("click", removeCard())    
-})
 
-
+    
+    
