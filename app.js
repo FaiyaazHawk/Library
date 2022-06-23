@@ -80,7 +80,7 @@ function createBook(book, index) {
     removeBtn.textContent = 'Remove'; 
     removeBtn.setAttribute('class', 'removeBtn');
     removeBtn.dataset.index = index;
-    removeBtn.addEventListener('click', function() {removeCard()})
+    removeBtn.addEventListener('click', function() {removeCard(this)})
     
     card.appendChild(removeBtn);
 
@@ -88,8 +88,11 @@ function createBook(book, index) {
     
 }
 
-function removeCard() {
-    console.log('will remove card')
+function removeCard(btn) {
+    const index = btn.dataset.index
+    library.splice(index,1)
+    clearPage()
+    displayFromLibrary()
 }
 
 
